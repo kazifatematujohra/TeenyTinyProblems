@@ -1,6 +1,6 @@
 # Triangle Text Art
 
-## 1. Draw a Rightangled Triangle 
+## 1. Draw a Right-angled Triangle 
 Draw a triangle of a given size.
 
 E.g., if the input size is 4, the triangle will look like this-
@@ -216,3 +216,148 @@ int main(){
     return 0;
 }
 ```
+## 6. Now, Draw a Boundary Around The Diamond
+It should be like-
+```
+***********
+*         *
+*    *    *
+*   ***   *
+*  *****  *
+*  *****  *
+*   ***   *
+*    *    *
+*         *
+***********
+```
+
+Solution-
+```C
+#include <stdio.h>
+
+int main(){
+    printf("Enter a size: ");
+    int size;
+    scanf("%d", &size);
+    int i;
+    int j;
+    int k;
+    int x;
+    int y;
+    int z;
+    int m;
+    int a;
+    int b;
+    int c;
+    int d;
+    int p;
+    int q;
+    if (size % 2 == 0){
+        for (a = 1; a <= size + 3; a++){
+            printf("*");
+        }
+        printf("\n");
+        printf("*");
+        for (c = 1; c <= size + 1; c++){
+            printf(" ");
+        }
+        printf("*");
+        printf("\n");
+        for (i = 1; i <= size / 2; i++){
+            printf("* ");
+            for (j = 1; j <= (size / 2) - i; j++){
+                printf(" ");
+            }
+            for (k = 1; k < 2*i; k++){
+                printf("*");
+            }
+            for (p = 1; p <= (size / 2) - i; p++){
+                printf(" ");
+            }
+            printf(" *");
+            printf("\n");
+        }
+        for (x = 0; x < size / 2; x++){
+            printf("* ");
+            for (y = 1; y <= x; y++){
+                printf(" ");
+            }
+            for (z = 1; z < 2 * ((size / 2) - x); z++){
+                printf("*");
+            }
+            for (p = 1; p <= x; p++){
+                printf(" ");
+            }
+            printf(" *");
+            printf("\n");
+        }
+        printf("*");
+        for (d = 1; d <= size + 1; d++){
+            printf(" ");
+        }
+        printf("*");
+        printf("\n");
+        for (b = 1; b <= size + 3; b++){
+            printf("*");
+        }
+    }
+    else {
+        for (a = 1; a <= size + 4; a++){
+            printf("*");
+        }
+        printf("\n");
+        printf("*");
+        for (c = 1; c <= size + 2; c++){
+            printf(" ");
+        }
+        printf("*");
+        printf("\n");
+        for (i = 1; i <= size / 2; i++){
+            printf("* ");
+            for (j = 0; j <= (size / 2) - i; j++){
+                printf(" ");
+            }
+            for (k = 1; k < 2*i; k++){
+                printf("*");
+            }
+            for (p = 0; p <= (size / 2) - i; p++){
+                printf(" ");
+            }
+            printf(" *");
+            printf("\n");
+            }
+        printf("* ");
+        for (m = 1; m <= size; m++){
+            printf("*");
+        }
+        printf(" *");
+        printf("\n");
+
+        for (x = 0; x < size / 2; x++){
+            printf("* ");
+            for (y = 0; y <= x; y++){
+                printf(" ");
+            }
+            for (z = 1; z < 2 * ((size / 2) - x); z++){
+                printf("*");
+            }
+            for (p = 0; p <= x; p++){
+                printf(" ");
+            }
+            printf(" *");
+            printf("\n");
+        }
+        printf("*");
+        for (d = 1; d <= size + 2; d++){
+            printf(" ");
+        }
+        printf("*");
+        printf("\n");
+        for (b = 0; b <= size + 3; b++){
+            printf("*");
+        }
+        }
+
+    return 0;
+}
+
